@@ -1,11 +1,12 @@
 const express = require("express");
+const taskController = require("../controllers/taskController");
+
 const router = express.Router();
 
-router.get("/", (req ,res) =>{
- res.json({
-        message: "Tüm görevleri getir."
-    });
-});
+
+//get gelince gidip taskcontrollerden çağıracak
+router.get("/", taskController.getAllTasks);
+
 
 router.post("/", (req ,res) =>{
  res.json({
