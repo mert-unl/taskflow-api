@@ -1,4 +1,4 @@
-const taskData = require("../data/taskData");
+let taskData = require("../data/taskData");
 
 const getAllTasks = (req, res) => {
   res.json({
@@ -34,10 +34,10 @@ const updateTask = (req, res) => {
   const id = req.params.id;
   const task = taskData.find((task) => task.id === Number(id));
   const taskInfo = req.body;
-   
-    task.title = taskInfo.title;
-    task.desc = taskInfo.desc;
-    task.completed = taskInfo.completed;
+
+  task.title = taskInfo.title;
+  task.desc = taskInfo.desc;
+  task.completed = taskInfo.completed;
 
   res.json({
     task: task,
@@ -48,7 +48,8 @@ const updateTask = (req, res) => {
 const deleteTask = (req, res) => {
   const id = req.params.id;
   const task = taskData.find((task) => task.id === Number(id));
-
+  taskData = taskData.filter((task) => task.id !== Number(id));
+  
   res.json({
     task: task,
     message: `Görev ${id} silindi`,

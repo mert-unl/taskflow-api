@@ -3,7 +3,7 @@ GET http://localhost:3000/tasks
 
 
 ### Görev getir
-GET http://localhost:3000/tasks/6
+GET http://localhost:3000/tasks/4
 
 
 ### Yeni görev oluştur
@@ -33,6 +33,9 @@ Content-Type: application/json
 
 {
     "title": "Görev Gücellendi",
-    "desc": "Bu task başarıyla güncellendi.",
+    "desc": "Bu task TEKRAR güncellendi.",
     "completed": true
 }
+
+### Delete Task
+DELETE  http://localhost:3000/tasks/3
