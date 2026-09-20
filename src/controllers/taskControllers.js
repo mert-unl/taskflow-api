@@ -8,7 +8,10 @@ const getAllTasks = (req, res) => {
 };
 
 const createTask = (req, res) => {
-  res.json({
+   const taskInfo = req.body;
+
+    res.json({
+     task: taskInfo,
     message: "Yeni görev oluştur.",
   });
 };

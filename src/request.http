@@ -1,0 +1,17 @@
+### Tüm görevleri getir
+GET http://localhost:3000/tasks
+
+
+### Görev getir
+GET http://localhost:3000/tasks/3
+
+
+### Yeni görev oluştur
+POST http://localhost:3000/tasks
+Content-Type: application/json
+
+{
+    "title": "Post ile Görev oluştur",
+    "description": "ilk görevi oluştur",
+    "completed": false
+}
