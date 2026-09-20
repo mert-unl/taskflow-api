@@ -33,6 +33,11 @@ const getTask = (req, res) => {
 const updateTask = (req, res) => {
   const id = req.params.id;
   const task = taskData.find((task) => task.id === Number(id));
+  const taskInfo = req.body;
+   
+    task.title = taskInfo.title;
+    task.desc = taskInfo.desc;
+    task.completed = taskInfo.completed;
 
   res.json({
     task: task,

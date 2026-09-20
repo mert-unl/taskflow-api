@@ -3,7 +3,7 @@ GET http://localhost:3000/tasks
 
 
 ### Görev getir
-GET http://localhost:3000/tasks/3
+GET http://localhost:3000/tasks/6
 
 
 ### Yeni görev oluştur
@@ -12,7 +12,7 @@ Content-Type: application/json
 
 {
     "title": "Post ile Görev oluştur",
-    "description": "ilk görevi oluştur",
+    "desc": "ilk görevi oluştur",
     "completed": false
 }
 
@@ -22,6 +22,17 @@ Content-Type: application/json
 
 {
     "title": "ID TEST",
-    "description": "idsi olan yeni görev oluştur",
+    "desc": "idsi olan yeni görev oluştur",
     "completed": false
+}
+
+
+### PUT Task güncelle 
+PUT http://localhost:3000/tasks/4
+Content-Type: application/json
+
+{
+    "title": "Görev Gücellendi",
+    "desc": "Bu task başarıyla güncellendi.",
+    "completed": true
 }
