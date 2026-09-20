@@ -10,3 +10,10 @@ app.get("/", (req ,res) =>{
         message: "İlk deneme route"
     });
 });
+
+
+app.get("/tasks", (req ,res) =>{
+ res.json({
+        message: "Tüm görevler"
+    });
+});
