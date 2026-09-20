@@ -9,7 +9,7 @@ const getAllTasks = (req, res) => {
 
 const createTask = (req, res) => {
   const taskInfo = req.body;
-  const id = taskData.length + 1;
+  const id = Math.max(...taskData.map((task) => task.id)) + 1;
   taskInfo.id = id;
 
   taskData.push(taskInfo);

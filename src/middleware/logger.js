@@ -6,8 +6,7 @@ const logger = (req, res, next) => {
 
   const method = req.method;
   const url = req.originalUrl;
-
-  console.log(timestamp);
+  
   console.log(`${method} ${url} || ${timestamp}`);
 
   next();
