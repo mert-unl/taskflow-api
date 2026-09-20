@@ -9,22 +9,24 @@ GET http://localhost:3000/tasks/4
 ### Yeni görev oluştur
 POST http://localhost:3000/tasks
 Content-Type: application/json
+
 {
     "title": "Post ile Görev oluştur",
     "desc": "ilk görevi oluştur",
     "priority": "Önemli",
-    "assignee": "Mert Ünal",
+    "assignee": "Unknown",
     "completed": false
 }
 
 
 ### PUT Task güncelle 
-PUT http://localhost:3000/tasks/4
+PUT http://localhost:3000/tasks/6
 Content-Type: application/json
+
 {
     "title": "Görev Gücellendi",
     "desc": "Bu task TEKRAR güncellendi.",
-     "priority": "Önemli",
+     "priority": "Orta",
     "assignee": "Mert Ünal",
     "completed": true
 }

@@ -17,7 +17,7 @@ const createTask = (req, res) => {
   res.json({
     task: taskInfo,
     message: "Yeni görev başarıyla oluşturuldu.",
-  });
+  }); 
 };
 
 //id
