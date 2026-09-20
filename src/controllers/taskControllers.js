@@ -2,16 +2,19 @@ const taskData = require("../data/taskData");
 
 const getAllTasks = (req, res) => {
   res.json({
-     task: taskData,
-     message: `Tüm görevler getirildi, toplam görev adedi ${taskData.length}`,
-});
+    task: taskData,
+    message: `Tüm görevler getirildi, toplam görev adedi ${taskData.length}`,
+  });
 };
 
 const createTask = (req, res) => {
-   const taskInfo = req.body;
-     taskData.push(taskInfo);
-    res.json({
-     task: taskInfo,
+  const taskInfo = req.body;
+  const id = taskData.length + 1;
+  taskInfo.id = id;
+
+  taskData.push(taskInfo);
+  res.json({
+    task: taskInfo,
     message: "Yeni görev oluştur.",
   });
 };
@@ -19,19 +22,19 @@ const createTask = (req, res) => {
 //id
 const getTask = (req, res) => {
   const id = req.params.id;
-  const task = taskData.find(task => task.id === Number(id));
-  
+  const task = taskData.find((task) => task.id === Number(id));
+
   res.json({
-    task:task,
+    task: task,
     message: `Görev ${id} getirildi`,
   });
 };
 
 const updateTask = (req, res) => {
   const id = req.params.id;
-  const task = taskData.find(task => task.id === Number(id));
+  const task = taskData.find((task) => task.id === Number(id));
 
-   res.json({
+  res.json({
     task: task,
     message: `Görev ${id} güncellendi`,
   });
@@ -39,9 +42,9 @@ const updateTask = (req, res) => {
 
 const deleteTask = (req, res) => {
   const id = req.params.id;
-  const task = taskData.find(task => task.id === Number(id));
+  const task = taskData.find((task) => task.id === Number(id));
 
-   res.json({
+  res.json({
     task: task,
     message: `Görev ${id} silindi`,
   });
