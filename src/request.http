@@ -3,7 +3,7 @@ GET http://localhost:3000/tasks
 
 
 ### Görev getir
-GET http://localhost:3000/tasks/4
+GET http://localhost:3000/tasks/5
 
 
 ### Yeni görev oluştur
@@ -11,10 +11,11 @@ POST http://localhost:3000/tasks
 Content-Type: application/json
 
 {
+
     "title": "Post ile Görev oluştur",
     "desc": "ilk görevi oluştur",
-    "priority": "Önemli",
-    "assignee": "Unknown",
+    "priority": "Orta",
+    "assignee": "Mert Ünal",
     "completed": false
 }
 
@@ -33,4 +34,9 @@ Content-Type: application/json
 
 
 ### Delete Task
-DELETE  http://localhost:3000/tasks/3
+DELETE  http://localhost:3000/tasks/7
+
+
+
+### Delete All Tasks
+DELETE  http://localhost:3000/tasks

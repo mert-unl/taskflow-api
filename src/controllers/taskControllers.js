@@ -17,7 +17,15 @@ const createTask = (req, res) => {
   res.json({
     task: taskInfo,
     message: "Yeni görev başarıyla oluşturuldu.",
-  }); 
+  });
+};
+
+const deleteAllTasks = (req, res) => {
+  taskData = [];
+  res.json({
+    task: [],
+    message: "Tüm görevler silindi",
+  });
 };
 
 //id
@@ -62,6 +70,7 @@ const deleteTask = (req, res) => {
 module.exports = {
   getAllTasks,
   createTask,
+  deleteAllTasks,
   getTask,
   updateTask,
   deleteTask,
