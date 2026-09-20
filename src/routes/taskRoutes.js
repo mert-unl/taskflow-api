@@ -7,31 +7,14 @@ const router = express.Router();
 //get gelince gidip taskcontrollerden çağıracak
 router.get("/", taskController.getAllTasks);
 
-
-router.post("/", (req ,res) =>{
- res.json({
-        message: "Yeni görev oluştur."
-    });
-});
+router.post("/", taskController.createTask);
 
 
 //id
-router.get("/:id", (req ,res) =>{
- res.json({
-        message: "Belli id'li görevi getir."
-    });
-});
+router.get("/:id",taskController.getTask)
 
-router.put("/:id", (req ,res) =>{
- res.json({
-        message: "Belli id'li görevi güncelle."
-    });
-});
+router.put("/:id", taskController.updateTask);
 
-router.delete("/:id", (req ,res) =>{
- res.json({
-        message: "Belli id'li görevi sil."
-    });
-});
+router.delete("/:id", taskController.deleteTask);
 
 module.exports = router;
