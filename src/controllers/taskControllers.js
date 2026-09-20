@@ -1,48 +1,53 @@
 const taskData = require("../data/taskData");
 
-
 const getAllTasks = (req, res) => {
-     res.json(taskData); 
-    };
-
-
-const createTask =  (req ,res) =>{
- res.json({
-        message: "Yeni görev oluştur."
-    });
+  res.json({
+     task: taskData,
+     message: `Tüm görevler getirildi, toplam görev adedi ${taskData.length}`,
+});
 };
 
+const createTask = (req, res) => {
+  res.json({
+    message: "Yeni görev oluştur.",
+  });
+};
 
 //id
-const getTask =  (req ,res) =>{
-    const id = req.params.id;
-
- res.json({
-        message: `Task ${id} getirildi`
-    });
+const getTask = (req, res) => {
+  const id = req.params.id;
+  const task = taskData.find(task => task.id === Number(id));
+  
+  res.json({
+    task:task,
+    message: `Görev ${id} getirildi`,
+  });
 };
 
-const updateTask =  (req ,res) =>{
-    const id = req.params.id;
+const updateTask = (req, res) => {
+  const id = req.params.id;
+  const task = taskData.find(task => task.id === Number(id));
 
- res.json({
-        message: `Task ${id} güncellendi`
-    });
+   res.json({
+    task: task,
+    message: `Görev ${id} güncellendi`,
+  });
 };
 
-const deleteTask =  (req ,res) =>{
-    const id = req.params.id;
+const deleteTask = (req, res) => {
+  const id = req.params.id;
+  const task = taskData.find(task => task.id === Number(id));
 
- res.json({
-        message: `Task ${id} silindi`
-    });
+   res.json({
+    task: task,
+    message: `Görev ${id} silindi`,
+  });
 };
 
 module.exports = {
-    getAllTasks,
-    createTask,
-    getTask,
-    updateTask,
-    deleteTask
-
+  getAllTasks,
+  createTask,
+  getTask,
+  updateTask,
+  deleteTask,
 };
