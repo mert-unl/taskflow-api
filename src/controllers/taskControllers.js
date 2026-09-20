@@ -13,20 +13,26 @@ const createTask =  (req ,res) =>{
 
 //id
 const getTask =  (req ,res) =>{
+    const id = req.params.id;
+
  res.json({
-        message: "Task getirildi"
+        message: `Task ${id} getirildi`
     });
 };
 
 const updateTask =  (req ,res) =>{
+    const id = req.params.id;
+
  res.json({
-        message: "Task güncellendi"
+        message: `Task ${id} güncellendi`
     });
 };
 
 const deleteTask =  (req ,res) =>{
+    const id = req.params.id;
+    
  res.json({
-        message: "Task silindi"
+        message: `Task ${id} silindi`
     });
 };
 
