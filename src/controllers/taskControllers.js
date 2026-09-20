@@ -1,8 +1,10 @@
+const taskData = require("../data/taskData");
+
+
 const getAllTasks = (req, res) => {
-    res.json({
-        message: "Tüm tasklar getirildi."
-    });
-};
+     res.json(taskData); 
+    };
+
 
 const createTask =  (req ,res) =>{
  res.json({
@@ -30,7 +32,7 @@ const updateTask =  (req ,res) =>{
 
 const deleteTask =  (req ,res) =>{
     const id = req.params.id;
-    
+
  res.json({
         message: `Task ${id} silindi`
     });
