@@ -1,10 +1,14 @@
 const logger = (req, res, next) => {
-  const timestamp = new Date().toISOString();
+  const now = new Date();
+  const timestamp =
+    `${now.getDate()}.${now.getMonth() + 1}.${now.getFullYear()} ` +
+    `${now.getHours()}:${now.getMinutes()}:${now.getSeconds()}`;
+
   const method = req.method;
   const url = req.originalUrl;
 
   console.log(timestamp);
-  console.log(`${method} ${url} -- ${timestamp}`);
+  console.log(`${method} ${url} || ${timestamp}`);
 
   next();
 };
