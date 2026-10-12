@@ -11,11 +11,19 @@ router.post("/", taskController.createTask);
 
 router.delete("/",taskController.deleteAllTasks);
 
+//gelişmiş özellikler
+router.get("/search", taskController.searchTasks);
+router.get("/assignee/:assignee", taskController.getTasksByAssignee);
+
+
 //id
 router.get("/:id",taskController.getTask)
 
 router.put("/:id", taskController.updateTask);
 
 router.delete("/:id", taskController.deleteTask);
+
+
+
 
 module.exports = router;

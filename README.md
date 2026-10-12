@@ -2,12 +2,11 @@
  TASKFLOW, Node.js ve Express.js kullanılarak hazırlanmış basit bir görev yönetimi REST API projesidir.
  Projede görev oluşturma, görevleri listeleme, görev detayını görüntüleme, görev güncelleme ve görev silme işlemleri yapılabilir.
 
-## Kullanılan Teknolojiler
+## Kullanılan Teknolojiler ve Kütüphaneler
 - Node.js
 - Express.js
-- JavaScript
+- Middleware
 - REST API
-- JSON
 - Nodeman
 
 ## Proje Yapısı
@@ -62,7 +61,18 @@ src
  API isteklerini test etmek için VS Code içerisindeki REST Client eklentisi kullanılabilir. Eklentiyi kurup "/src/request.http" dosyasından istediğiniz istekleri kullanabilirsiniz. Yeni istek üretip var olan istekleri deneyebilirsiniz.
 
 ## Logger - Middleware
- Projede gelen HTTP isteklerini takip etmek için bir logger middleware bulunmaktadır. İstek geldiğinde terminalde HTTP methodu, endpoint ve istek zamanı gösterilir. Örn: GET /tasks || 20.9.2026 20:45:25
+ Projede gelen HTTP isteklerini takip etmek için bir logger middleware bulunmaktadır. İstek geldiğinde terminalde HTTP methodu, endpoint ve istek zamanı gösterilir. 
+ Örn: GET /tasks || 20.9.2026 20:45:25
+
+ Body olan istekler için body ile beraber gözükür.
+ Örn: POST /tasks || 20.9.2026 21:0:51
+    Body: {
+    title: 'Post ile Görev oluştur',
+    desc: 'ilk görevi oluştur',
+    priority: 'Orta',
+    assignee: 'Mert Ünal',
+    completed: false
+    }
 
 ## Not
  Görev verileri bu projede geçici olarak "/src/data/taskData.js" içerisinde tutulmaktadır. Projede henüz bir veritabanı kullanılmamıştır.

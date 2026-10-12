@@ -40,3 +40,14 @@ DELETE  http://localhost:3000/tasks/7
 
 ### Delete All Tasks
 DELETE  http://localhost:3000/tasks
+
+
+### Kelimeye göre arama
+GET http://localhost:3000/tasks/search?keyword=expr
+
+
+### Kullanıcının görevleri getir
+GET http://localhost:3000/tasks/assignee/Mert Ünal
+
+GET http://localhost:3000/tasks?status=completed
+GET http://localhost:3000/tasks?status=pending
