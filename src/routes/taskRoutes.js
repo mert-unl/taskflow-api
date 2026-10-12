@@ -14,6 +14,7 @@ router.delete("/",taskController.deleteAllTasks);
 //gelişmiş özellikler
 router.get("/search", taskController.searchTasks);
 router.get("/assignee/:assignee", taskController.getTasksByAssignee);
+router.get("/completed/:completed", taskController.getTasksByCompletionStatus);
 
 
 //id
