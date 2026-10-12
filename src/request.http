@@ -12,8 +12,8 @@ Content-Type: application/json
 
 {
 
-    "title": "Post ile Görev oluştur",
-    "desc": "ilk görevi oluştur",
+    "title": "Tarihli Görev2",
+    "desc": "createDate test",
     "priority": "Orta",
     "assignee": "Mert Ünal",
     "completed": false
@@ -54,3 +54,11 @@ GET http://localhost:3000/tasks?completed=true
 
 #### Status- bitmemiş görevler
 GET http://localhost:3000/tasks?completed=false
+
+
+
+### En yeniye göre sırala
+GET http://localhost:3000/tasks?sort=createDate&order=desc
+
+### En eskiye göre sırala
+GET http://localhost:3000/tasks?sort=createDate&order=asc

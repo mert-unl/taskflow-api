@@ -5,7 +5,7 @@ const getAllTasks = (req, res) => {
   let filteredTasks = taskData;
 
   const completed = req.query.completed;
-  
+
   if (completed === "true") {
     filteredTasks = filteredTasks.filter(
       (task) => task.completed === true
@@ -25,6 +25,23 @@ if (priority) {
   );
 }
 
+
+  const sort = req.query.sort;
+  const order = req.query.order;
+
+  if (sort === "createDate") {
+    if (order === "asc") {
+      filteredTasks = [...filteredTasks].sort(
+        (a, b) =>
+          new Date(a.createDate) - new Date(b.createDate)
+      );
+    } else if (order === "desc") {
+      filteredTasks = [...filteredTasks].sort(
+        (a, b) =>
+          new Date(b.createDate) - new Date(a.createDate)
+      );
+    }
+  }
 
   res.json({
     task: filteredTasks,
@@ -83,7 +100,8 @@ const createTask = (req, res) => {
   const taskInfo = req.body;
   const id = Math.max(...taskData.map((task) => task.id)) + 1;
 
-  taskInfo.id = id;
+  taskInfo.id = id;  
+  taskInfo.createDate = new Date().toISOString();
   taskData.push(taskInfo);
 
   res.json({
