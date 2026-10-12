@@ -55,7 +55,8 @@ GET http://localhost:3000/tasks?completed=true
 #### Status- bitmemiş görevler
 GET http://localhost:3000/tasks?completed=false
 
-
+#### Öncelik - bitmemiş görevler
+GET http://localhost:3000/tasks?priority=Önemli&completed=false
 
 ### En yeniye göre sırala
 GET http://localhost:3000/tasks?sort=createDate&order=desc

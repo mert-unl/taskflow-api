@@ -57,6 +57,30 @@ src
 - Delete /tasks
  Tüm görevleri topluca siler
 
+
+- Get	/tasks?completed=true	
+Tamamlanmış görevleri getirir
+
+- Get	/tasks?completed=false	
+Tamamlanmamış görevleri getirir
+
+- Get	/tasks?priority=Önemli
+
+	Belirtilen önceliğe sahip görevleri getirir
+
+- Get	/tasks/search?keyword=express	
+Başlıkta veya açıklamada kelime arar
+
+- Get	/tasks/assignee/Mert%20Ünal
+	Belirtilen kullanıcıya atanmış görevleri getirir
+
+- Get	/tasks?sort=createDate&order=asc	
+En eski oluşturulan görevleri önce getirir
+
+- Get	/tasks?sort=createDate&order=desc	
+En yeni oluşturulan görevleri önce getirir
+
+
 ## İstekleri Test Etme
  API isteklerini test etmek için VS Code içerisindeki REST Client eklentisi kullanılabilir. Eklentiyi kurup "/src/request.http" dosyasından istediğiniz istekleri kullanabilirsiniz. Yeni istek üretip var olan istekleri deneyebilirsiniz.
 
