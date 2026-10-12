@@ -4,20 +4,18 @@ let taskData = require("../data/taskData");
 const getAllTasks = (req, res) => {
   let filteredTasks = taskData;
 
-  const status = req.query.status;
-
-  if (status === "completed") {
+  const completed = req.query.completed;
+  
+  if (completed === "true") {
     filteredTasks = filteredTasks.filter(
       (task) => task.completed === true
     );
-  }
-
-  if (status === "pending") {
+  } else if (completed === "false") {
     filteredTasks = filteredTasks.filter(
       (task) => task.completed === false
     );
   }
-
+  
   
 const priority = req.query.priority;
 
