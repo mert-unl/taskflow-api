@@ -2,7 +2,18 @@
  TASKFLOW, Node.js ve Express.js kullanılarak hazırlanmış basit bir görev yönetimi REST API projesidir.
  Projede görev oluşturma, görevleri listeleme, görev detayını görüntüleme, görev güncelleme, görev silme ve gelişmiş filtreleme yapılabilir.
 
-## Kurulum
+## Kurulum ve Çalıştırma
+
+- Gereksinimler
+Node.js (LTS sürümü önerilir)
+VS Code
+REST Client eklentisi (VS Code üzerinden API isteklerini test etmek için request.http dosyasını kullanabilirsiniz.)
+
+- Projeyi indirin
+Projeyi GitHub üzerinden klonlayın veya bilgisayarınıza indirin.
+ git clone https://github.com/mert-unl/taskflow-api.git
+ cd TASKFLOW
+
 - Gerekli paketleri yüklemek için 
  "npm install"
  
