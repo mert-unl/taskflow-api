@@ -1,6 +1,20 @@
 # TASKFLOW 
  TASKFLOW, Node.js ve Express.js kullanılarak hazırlanmış basit bir görev yönetimi REST API projesidir.
- Projede görev oluşturma, görevleri listeleme, görev detayını görüntüleme, görev güncelleme ve görev silme işlemleri yapılabilir.
+ Projede görev oluşturma, görevleri listeleme, görev detayını görüntüleme, görev güncelleme, görev silme ve gelişmiş filtreleme yapılabilir.
+
+## Kurulum
+- Gerekli paketleri yüklemek için 
+ "npm install"
+ 
+- Projeyi normal şekilde çalıştırmak için
+ "npm start"
+
+- Geliştirme sırasında Nodeman ile çalıştırmak için
+ "npm run dev"
+
+- Varsayılan sunucu olarak 3000 portunda çalışır
+ http://localhost:3000
+
 
 ## Kullanılan Teknolojiler ve Kütüphaneler
 - Node.js
@@ -22,21 +36,6 @@ src
 ├── app.js
 ├── request.http
 └── server.js
-
-
-## Kurulum
-- Gerekli paketleri yüklemek için 
- "npm install"
- 
-- Projeyi normal şekilde çalıştırmak için
- "npm start"
-
-- Geliştirme sırasında Nodeman ile çalıştırmak için
- "npm run dev"
-
-- Varsayılan sunucu olarak 3000 portunda çalışır
- http://localhost:3000
-
 
 ## API Endpontleri
 - Get /tasks
@@ -89,7 +88,8 @@ En yeni oluşturulan görevleri önce getirir
  Örn: GET /tasks || 20.9.2026 20:45:25
 
  Body olan istekler için body ile beraber gözükür.
- Örn: POST /tasks || 20.9.2026 21:0:51
+ Örn: 
+ POST /tasks || 20.9.2026 21:0:51
     Body: {
     title: 'Post ile Görev oluştur',
     desc: 'ilk görevi oluştur',
